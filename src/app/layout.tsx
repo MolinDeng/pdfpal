@@ -8,7 +8,6 @@ import './globals.css';
 // import 'simplebar-react/dist/simplebar.min.css';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = constructMetadata();
 
