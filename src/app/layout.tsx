@@ -7,6 +7,8 @@ import './globals.css';
 // import 'react-loading-skeleton/dist/skeleton.css';
 // import 'simplebar-react/dist/simplebar.min.css';
 
+import { Toaster } from '@/components/ui/toaster';
+
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export const metadata = constructMetadata();
@@ -25,8 +27,8 @@ export default function RootLayout({
           montserrat.className
         )}
       >
-        {/* <Toaster /> */}
-        {/* <Navbar /> */}
+        <Toaster />
+        <Navbar />
         {children}
       </body>
       {/* </Providers> */}
