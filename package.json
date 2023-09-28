@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@tailwindcss/typography": "^0.5.10",
@@ -19,6 +20,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "stripe": "^13.7.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"
   },
