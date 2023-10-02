@@ -45,6 +45,8 @@ model File {
   updatedAt DateTime @updatedAt
   User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+
+  @@index([userId])
 }
 
 model Message {
@@ -59,4 +61,7 @@ model Message {
   userId    String?
   File      File?    @relation(fields: [fileId], references: [id])
   fileId    String?
+
+  @@index([userId])
+  @@index([fileId])
 }
