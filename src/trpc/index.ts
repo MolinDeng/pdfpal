@@ -175,7 +175,7 @@ export const appRouter = router({
     }),
 
   deleteFile: privateProcedure
-    .input(z.object({ id: z.string() }))
+    .input(z.object({ id: z.string() })) // post request body
     .mutation(async ({ ctx, input }) => {
       const { userId } = ctx;
 

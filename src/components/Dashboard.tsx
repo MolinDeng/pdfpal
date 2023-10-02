@@ -4,6 +4,7 @@ import { trpc } from '@/app/_trpc/client';
 import UploadButton from '@/components/UploadButton';
 import { Ghost, Loader2, MessageSquare, Plus, Trash } from 'lucide-react';
 import Skeleton from 'react-loading-skeleton';
+// import { Skeleton } from '@/components/ui/skeleton';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { Button } from '@/components/ui/button';
@@ -25,13 +26,13 @@ const Dashboard = ({ subscriptionPlan }: PageProps) => {
 
   const { mutate: deleteFile } = trpc.deleteFile.useMutation({
     onSuccess: () => {
-      utils.getUserFiles.invalidate();
+      utils.getUserFiles.invalidate(); // ! automatically refetches and reload the page
     },
     onMutate({ id }) {
-      setCurrentlyDeletingFile(id);
+      setCurrentlyDeletingFile(id); // * loading state
     },
     onSettled() {
-      setCurrentlyDeletingFile(null);
+      setCurrentlyDeletingFile(null); // * loading state
     },
   });
 
@@ -88,7 +89,8 @@ const Dashboard = ({ subscriptionPlan }: PageProps) => {
                     onClick={() => deleteFile({ id: file.id })}
                     size="sm"
                     className="w-full"
-                    variant="destructive"
+                    variant="destructiveNoBg"
+                    disabled={!!currentlyDeletingFile} // ! if currently deleting file, disable button
                   >
                     {currentlyDeletingFile === file.id ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
