@@ -1,9 +1,9 @@
 'use client';
 
 import { getUserSubscriptionPlan } from '@/lib/stripe';
-import { useToast } from './ui/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 import { trpc } from '@/app/_trpc/client';
-import MaxWidthWrapper from './MaxWidthWrapper';
+import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import {
   Card,
   CardDescription,
