@@ -22,7 +22,7 @@ const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
   const { startUpload } = useUploadThing(
     isSubscribed ? 'proPlanUploader' : 'freePlanUploader'
   );
-
+  // every time we upload a file, we will start polling the server by checking the database until the file is ready
   const { mutate: startPolling } = trpc.getFile.useMutation({
     onSuccess: (file) => {
       router.push(`/dashboard/${file.id}`);
@@ -77,6 +77,8 @@ const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
             variant: 'destructive',
           });
         }
+        // mock progress
+        // await new Promise((resolve) => setTimeout(resolve, 150000));
 
         clearInterval(progressInterval);
         setUploadProgress(100);
