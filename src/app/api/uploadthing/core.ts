@@ -84,7 +84,7 @@ const onUploadComplete = async ({
     }
 
     // vectorize and index entire document
-    const pinecone = getPineconeClient();
+    const pinecone = await getPineconeClient();
     const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX_NAME!);
 
     const embeddings = new OpenAIEmbeddings({
