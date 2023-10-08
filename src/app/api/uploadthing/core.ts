@@ -116,6 +116,8 @@ const onUploadComplete = async ({
   }
 };
 
+// TODO switch to S3 bucket
+
 export const ourFileRouter = {
   freePlanUploader: f({ pdf: { maxFileSize: '4MB' } })
     .middleware(middleware)
