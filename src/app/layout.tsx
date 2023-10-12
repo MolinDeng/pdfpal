@@ -5,7 +5,8 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 
 import 'react-loading-skeleton/dist/skeleton.css';
-// import 'simplebar-react/dist/simplebar.min.css';
+// ! need to import this css file for simplebar-react to work
+import 'simplebar-react/dist/simplebar.min.css';
 
 import { Toaster } from '@/components/ui/toaster';
 

@@ -37,12 +37,7 @@ export default async function Page({ params }: PageProps) {
         {/* Left sidebar & main wrapper */}
         <div className="flex-1 xl:flex">
           <div className="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
-            {/* Main area for pdf viewer
-                - We will use react-pdf to render the pdf
-                - Or we can embed the pdf using iframe with google docs
-            */}
-            <PdfRenderer />
-            {/* <PdfRenderer url={file.url} /> */}
+            <PdfRenderer url={file.url} />
           </div>
         </div>
 
