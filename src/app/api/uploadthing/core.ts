@@ -81,6 +81,8 @@ const onUploadComplete = async ({
           id: createdFile.id,
         },
       });
+      // TODO delete file from uploadthing and return
+      // ! no return here ???? why
     }
 
     // vectorize and index entire document

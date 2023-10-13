@@ -177,6 +177,7 @@ export const appRouter = router({
   deleteFile: privateProcedure
     .input(z.object({ id: z.string() })) // post request body
     .mutation(async ({ ctx, input }) => {
+      // TODO delete file from uploadthing
       const { userId } = ctx;
 
       const file = await db.file.findFirst({
