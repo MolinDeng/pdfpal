@@ -2,9 +2,9 @@ import { trpc } from '@/app/_trpc/client';
 import { INFINITE_QUERY_LIMIT } from '@/config/infinite-query';
 import { Loader2, MessageSquare } from 'lucide-react';
 import Skeleton from 'react-loading-skeleton';
-import Message from './Message';
+import Message from '@/components/chat/Message';
 import { useContext, useEffect, useRef } from 'react';
-import { ChatContext } from './ChatContext';
+import { ChatContext } from '@/components/chat/ChatContext';
 import { useIntersection } from '@mantine/hooks';
 
 interface MessagesProps {

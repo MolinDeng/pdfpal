@@ -58,7 +58,7 @@ const onUploadComplete = async ({
 
     const blob = await response.blob();
 
-    const loader = new PDFLoader(blob);
+    const loader = new PDFLoader(blob); // load pdf into memory
 
     const pageLevelDocs = await loader.load();
 

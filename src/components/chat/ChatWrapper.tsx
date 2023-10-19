@@ -1,12 +1,12 @@
 'use client';
 
 import { trpc } from '@/app/_trpc/client';
-import ChatInput from './ChatInput';
+import ChatInput from '@/components/chat/ChatInput';
 import Messages from '@/components/chat/Messages';
 import { ChevronLeft, Loader2, XCircle } from 'lucide-react';
 import Link from 'next/link';
-import { buttonVariants } from '../ui/button';
-import { ChatContextProvider } from './ChatContext';
+import { buttonVariants } from '@/components/ui/button';
+import { ChatContextProvider } from '@/components/chat/ChatContext';
 import { PLANS } from '@/config/stripe';
 
 interface ChatWrapperProps {

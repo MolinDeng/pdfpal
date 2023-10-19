@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import { Loader2 } from 'lucide-react';
 import { format } from 'date-fns';
 
