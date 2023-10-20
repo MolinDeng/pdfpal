@@ -61,7 +61,7 @@ const Message = forwardRef<HTMLDivElement, MessageProps>(
                 {message.text}
               </ReactMarkdown>
             ) : (
-              message.text
+              message.text // JSX loading component
             )}
             {message.id !== 'loading-message' ? (
               <div
