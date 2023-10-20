@@ -1,4 +1,3 @@
-// TODO merge to Drizzle ORM
 import { PrismaClient } from '@prisma/client';
 
 declare global {

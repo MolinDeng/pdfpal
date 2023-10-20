@@ -1,6 +1,5 @@
 import { PineconeClient } from '@pinecone-database/pinecone';
 
-// TODO change deprecated method
 export const getPineconeClient = async () => {
   const client = new PineconeClient();
 
