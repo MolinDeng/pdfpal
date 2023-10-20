@@ -1,6 +1,7 @@
 import { db } from '@/db';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { createUploadthing, type FileRouter } from 'uploadthing/next';
+import { FileSize } from '@uploadthing/shared';
 
 import { PDFLoader } from 'langchain/document_loaders/fs/pdf';
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
@@ -121,10 +122,10 @@ const onUploadComplete = async ({
 // TODO switch to S3 bucket
 
 export const ourFileRouter = {
-  freePlanUploader: f({ pdf: { maxFileSize: '4MB' } })
+  freePlanUploader: f({ pdf: { maxFileSize: PLANS[0].sizeLimit as FileSize } })
     .middleware(middleware)
     .onUploadComplete(onUploadComplete),
-  proPlanUploader: f({ pdf: { maxFileSize: '16MB' } })
+  proPlanUploader: f({ pdf: { maxFileSize: PLANS[1].sizeLimit as FileSize } })
     .middleware(middleware)
     .onUploadComplete(onUploadComplete),
 } satisfies FileRouter;

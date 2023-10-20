@@ -21,14 +21,14 @@ const Page = () => {
     {
       plan: 'Free',
       tagline: 'For small side projects.',
-      quota: 10,
+      quota: PLANS[0].quota,
       features: [
         {
-          text: '5 pages per PDF',
+          text: PLANS[0].pagesPerPdf + ' pages per PDF', // '5 pages per PDF',
           footnote: 'The maximum amount of pages per PDF-file.',
         },
         {
-          text: '4MB file size limit',
+          text: PLANS[0].sizeLimit + ' file size limit',
           footnote: 'The maximum file size of a single PDF file.',
         },
         {
@@ -51,11 +51,13 @@ const Page = () => {
       quota: PLANS.find((p) => p.slug === 'pro')!.quota,
       features: [
         {
-          text: '25 pages per PDF',
+          text:
+            PLANS.find((p) => p.slug === 'pro')!.pagesPerPdf + ' pages per PDF',
           footnote: 'The maximum amount of pages per PDF-file.',
         },
         {
-          text: '16MB file size limit',
+          text:
+            PLANS.find((p) => p.slug === 'pro')!.sizeLimit + ' file size limit',
           footnote: 'The maximum file size of a single PDF file.',
         },
         {
@@ -180,7 +182,7 @@ const Page = () => {
                           variant: 'secondary',
                         })}
                       >
-                        {user ? 'Upgrade now' : 'Sign up'}
+                        {user && plan === 'Free' ? 'Dashboard' : 'Sign up'}
                         <ArrowRight className="h-5 w-5 ml-1.5" />
                       </Link>
                     ) : user ? (
