@@ -12,7 +12,6 @@ export function absoluteUrl(path: string) {
   return `http://localhost:${process.env.PORT ?? 3000}${path}`;
 }
 
-// TODO - change this to my own metadata
 export function constructMetadata({
   title = 'PdfPal - the SaaS for students',
   description = 'PdfPal is an open-source software to make chatting to your PDF files easy.',
@@ -39,7 +38,7 @@ export function constructMetadata({
       ],
     },
     icons,
-    metadataBase: new URL('https://PdfPal-jet.vercel.app'),
+    metadataBase: new URL('https://pdfpal.vercel.app'),
     themeColor: '#FFF',
     ...(noIndex && {
       robots: {

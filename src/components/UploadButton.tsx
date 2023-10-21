@@ -108,7 +108,12 @@ const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
                   {isSubscribed
                     ? PLANS.find((plan) => plan.name === 'Pro')!.sizeLimit
                     : PLANS.find((plan) => plan.name !== 'Pro')!.sizeLimit}
-                  )
+                  ) and{' '}
+                  {isSubscribed
+                    ? PLANS.find((plan) => plan.name === 'Pro')!.pagesPerPdf
+                    : PLANS.find((plan) => plan.name !== 'Pro')!
+                        .pagesPerPdf}{' '}
+                  pages max
                 </p>
               </div>
 

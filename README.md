@@ -60,4 +60,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

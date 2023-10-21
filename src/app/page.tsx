@@ -3,8 +3,16 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import Image from 'next/image';
+import {
+  LoginLink,
+  RegisterLink,
+  getKindeServerSession,
+} from '@kinde-oss/kinde-auth-nextjs/server';
 
 export default function Home() {
+  const { getUser } = getKindeServerSession();
+  const user = getUser();
+
   return (
     <>
       <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
@@ -21,17 +29,26 @@ export default function Home() {
           PdfPal allows you to have conversations with any PDF document. Simply
           upload your file and start asking questions right away.
         </p>
-
-        <Link
-          className={buttonVariants({
-            size: 'lg',
-            className: 'mt-5',
-          })}
-          href="/dashboard"
-          target="_blank"
-        >
-          Get started <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+        {user ? (
+          <Link
+            className={buttonVariants({
+              size: 'lg',
+              className: 'mt-5',
+            })}
+            href="/dashboard"
+          >
+            Dashboard <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        ) : (
+          <LoginLink
+            className={buttonVariants({
+              size: 'lg',
+              className: 'mt-5',
+            })}
+          >
+            Get started <ArrowRight className="ml-2 h-5 w-5" />
+          </LoginLink>
+        )}
       </MaxWidthWrapper>
 
       {/* value proposition section */}
