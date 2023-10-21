@@ -34,6 +34,13 @@ const BillingForm = ({ subscriptionPlan }: BillingFormProps) => {
           });
         }
       },
+      onError: (error) => {
+        toast({
+          title: 'There was a problem...',
+          description: error.message,
+          variant: 'destructive',
+        });
+      },
     });
 
   return (
