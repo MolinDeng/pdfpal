@@ -42,10 +42,31 @@ export const appRouter = router({
   getUserFiles: privateProcedure.query(async ({ ctx }) => {
     const { userId } = ctx;
 
-    return await db.file.findMany({
+    const files = await db.file.findMany({
       where: {
         userId,
       },
+    });
+
+    const messageCounts = await db.message.groupBy({
+      by: ['fileId'],
+      where: {
+        fileId: {
+          in: files.map((file) => file.id),
+        },
+      },
+      _count: {
+        _all: true,
+      },
+    });
+    return files.map((file) => {
+      const messageCount = messageCounts.find(
+        (messageCount) => messageCount.fileId === file.id
+      );
+      return {
+        ...file,
+        messageCount: messageCount?._count._all ?? 0,
+      };
     });
   }),
 
