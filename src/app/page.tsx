@@ -173,6 +173,26 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <div className="inline fixed bottom-0 left-0 m-2">
+        By{' '}
+        <a
+          className="text-blue-600 underline"
+          href="https://molin7.vercel.app/"
+          target="_blank"
+        >
+          @molin
+        </a>
+        <br />
+        View source on{' '}
+        <a
+          className="text-blue-600 underline"
+          href="https://github.com/MolinDeng/pdfpal"
+          target="_blank"
+        >
+          Github
+        </a>
+      </div>
     </>
   );
 }
