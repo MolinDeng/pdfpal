@@ -83,7 +83,6 @@ const onUploadComplete = async ({
         },
       });
       // TODO delete the file from uploadthing and return
-      return;
     }
 
     // vectorize and index entire document
