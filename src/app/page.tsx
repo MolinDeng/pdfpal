@@ -174,6 +174,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* CTA section */}
       <div className="inline fixed bottom-0 left-0 m-2">
         By{' '}
         <a
