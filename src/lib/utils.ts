@@ -17,7 +17,7 @@ export function constructMetadata({
   title = 'PdfPal - the SaaS for students',
   description = 'PdfPal is an open-source software to make chatting to your PDF files easy.',
   image = '/thumbnail.png',
-  icons = '/favicon.ico',
+  icons = '/icon.svg',
   noIndex = false,
 }: {
   title?: string;
@@ -37,13 +37,6 @@ export function constructMetadata({
           url: image,
         },
       ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [image],
-      creator: '@joshtriedcoding',
     },
     icons,
     metadataBase: new URL('https://PdfPal-jet.vercel.app'),

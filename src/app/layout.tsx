@@ -12,7 +12,7 @@ import { Toaster } from '@/components/ui/toaster';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
-export const metadata = constructMetadata();
+// export const metadata = constructMetadata();
 
 export default function RootLayout({
   children,
