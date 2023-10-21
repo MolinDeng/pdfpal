@@ -7,7 +7,7 @@ import { ChevronLeft, Loader2, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { ChatContextProvider } from '@/components/chat/ChatContext';
-import { PLANS } from '@/config/stripe';
+import { PLANS } from '@/config/pro-plan';
 
 interface ChatWrapperProps {
   fileId: string;

@@ -11,6 +11,7 @@ import { useUploadThing } from '@/lib/uploadthing';
 import { useToast } from '@/components/ui/use-toast';
 import { trpc } from '@/app/_trpc/client';
 import { useRouter } from 'next/navigation';
+import { PLANS } from '@/config/pro-plan';
 
 const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
   const router = useRouter();
@@ -103,7 +104,11 @@ const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
                   and drop
                 </p>
                 <p className="text-xs text-zinc-500">
-                  PDF (up to {isSubscribed ? '16' : '4'}MB)
+                  PDF (up to{' '}
+                  {isSubscribed
+                    ? PLANS.find((plan) => plan.name === 'Pro')!.sizeLimit
+                    : PLANS.find((plan) => plan.name !== 'Pro')!.sizeLimit}
+                  )
                 </p>
               </div>
 

@@ -2,6 +2,8 @@
 
 import {
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ChevronUp,
   Loader2,
   RotateCw,
@@ -93,7 +95,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
             variant="ghost"
             aria-label="previous page"
           >
-            <ChevronDown className="h-4 w-4" />
+            <ChevronLeft className="h-4 w-4" />
           </Button>
 
           <div className="flex items-center gap-1.5">
@@ -126,7 +128,7 @@ const PdfRenderer = ({ url }: PdfRendererProps) => {
             variant="ghost"
             aria-label="next page"
           >
-            <ChevronUp className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
 

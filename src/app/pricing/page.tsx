@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { PLANS } from '@/config/stripe';
+import { PLANS } from '@/config/pro-plan';
 import { cn } from '@/lib/utils';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { ArrowRight, Check, HelpCircle, Minus } from 'lucide-react';

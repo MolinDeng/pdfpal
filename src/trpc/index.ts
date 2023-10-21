@@ -6,7 +6,11 @@ import { z } from 'zod';
 import { INFINITE_QUERY_LIMIT } from '@/config/infinite-query';
 import { absoluteUrl } from '@/lib/utils';
 import { getUserSubscriptionPlan, stripe } from '@/lib/stripe';
-import { PLANS } from '@/config/stripe';
+import { PLANS } from '@/config/pro-plan';
+import { UTApi } from 'uploadthing/server';
+import { getPineconeClient } from '@/lib/pinecone';
+
+const utapi = new UTApi();
 
 export const appRouter = router({
   authCallback: publicProcedure.query(async () => {
@@ -195,8 +199,23 @@ export const appRouter = router({
       });
 
       // TODO delete file from uploadthing
+      // await utapi.deleteFiles(file.key);
 
-      // TODO delete messages from db
+      // ! delete messages from db
+      await db.message.deleteMany({
+        where: {
+          fileId: input.id,
+        },
+      });
+
+      // ! delete namespace from pinecore
+      const pinecone = await getPineconeClient();
+      const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX_NAME!);
+      pineconeIndex.delete1({
+        deleteAll: true,
+        namespace: input.id,
+      });
+
       return file;
     }),
 });
