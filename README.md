@@ -4,6 +4,12 @@ Built with the Next.js 13.5, App Router, tRPC, TypeScript, Prisma & Tailwind, Up
 
 ![Project Image](https://github.com/MolinDeng/pdfpal/blob/main/public/thumbnail.png)
 
+## Preview
+
+![Project Image](https://github.com/MolinDeng/pdfpal/blob/main/public/dashboard-preview.jpg)
+
+![Project Image](https://github.com/MolinDeng/pdfpal/blob/main/public/file-upload-preview.jpg)
+
 ## Features
 
 - 🛠️ SaaS Platform
